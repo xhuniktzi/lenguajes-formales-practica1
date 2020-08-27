@@ -1,0 +1,2 @@
+class CursoRefError(Exception):
+    pass
