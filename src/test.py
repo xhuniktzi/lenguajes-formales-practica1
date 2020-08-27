@@ -4,8 +4,7 @@ from models.Curso import Curso
 from models.Estado import Estado
 from models.Opcionalidad import Opcionalidad
 
-from helpers.database import create
-from helpers.database import update
+from helpers.database import create, read, update, delete
 
 
 def list_data():
@@ -77,10 +76,17 @@ create(db, curso_1)
 create(db, curso_2)
 create(db, curso_3)
 
-print('1\n')
-list_data()
+print('****1****\n')  # print(read(db))
+for obj in read(db):
+    print(obj.nombre)
+    pass
 
-update(db, curso_2, 4)
+# map(lambda obj: print(obj.nombre), read(db))
+# update(db, curso_2, 4)
 
-print('2\n')
-list_data()
+print('****2****\n')
+# print(read(db))
+for obj in read(db, opcionalidad=Opcionalidad.opcional, codigo=1):
+    print(obj.nombre)
+    pass
+# map(lambda obj: print(obj.nombre), read(db))
