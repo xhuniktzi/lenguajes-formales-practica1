@@ -3,4 +3,5 @@
 def render():
     print('*** Cargar archivo de entrada ***')
     print('Ingrese la direccion de su archivo CSV')
+    print('\n')
     pass
