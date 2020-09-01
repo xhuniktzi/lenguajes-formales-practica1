@@ -1,7 +1,6 @@
 # Controlador menu Principal
 
 from views import main_menu
-from helpers.clear_screen import clear_screen
 from controllers import load_files
 
 
@@ -12,22 +11,24 @@ def exec():
         main_menu.render()
         try:
             value_select = int(input())
-            clear_screen()
             pass
         except ValueError:
-            clear_screen()
             print('¡Valor invalido!')
             continue
         else:
+            # Cargar archivo csv
             if value_select == 1:
                 load_files.exec(database)
                 pass
+            # Gestionar cursos
             if value_select == 2:
                 print('Opcion 2')
                 pass
+            # Conteo de creditos
             if value_select == 3:
                 print('Opcion 3')
                 pass
+            # Mapa de cursos
             if value_select == 4:
                 print('Opcion 4')
                 pass
