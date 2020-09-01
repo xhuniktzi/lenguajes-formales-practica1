@@ -8,3 +8,4 @@ Repositorio de la practica 1 del curso de lenguajes formales y de programación 
 - [Logica del programa](/doc/logica.md)
 - [Validaciones del programa](/doc/validaciones.md)
 - [Base de datos](/doc/database.md)
+- [Consultas a la base de datos](/doc/query.md)

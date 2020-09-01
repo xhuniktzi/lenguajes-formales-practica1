@@ -26,6 +26,11 @@ def core_create(database, curso):
     elif type(curso.estado) != Estado:
         raise TypeError
 
+    for element in curso.codigo_requisitos:
+        if type(element) != int:
+            raise TypeError
+        pass
+
     database.append(curso)
     return curso
 
@@ -70,6 +75,11 @@ def core_update(database, curso, id_curso):
         raise TypeError
     elif type(curso.estado) != Estado:
         raise TypeError
+
+    for element in curso.codigo_requisitos:
+        if type(element) != int:
+            raise TypeError
+        pass
 
     for obj in database:
         if obj.codigo == id_curso:

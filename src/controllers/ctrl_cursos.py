@@ -1,14 +1,13 @@
-# Controlador menu Principal
+# Controlador gestion de cursos
 
-from views import main_menu
-from controllers import load_files, ctrl_cursos
+from views import ctrl_cursos
+from controllers import list_cursos, view_curso
 
 
-def exec():
-    database = list()
+def exec(database):
     value_select = 0
-    while value_select != 5:
-        main_menu.render()
+    while value_select != 6:
+        ctrl_cursos.render()
         try:
             value_select = int(input())
             pass
@@ -16,21 +15,25 @@ def exec():
             print('¡Valor invalido!')
             continue
         else:
-            # Cargar archivo csv
+            # Listar cursos
             if value_select == 1:
-                load_files.exec(database)
+                list_cursos.exec(database)
                 pass
-            # Gestionar cursos
+            # Mostrar cursos
             if value_select == 2:
-                ctrl_cursos.exec(database)
+                view_curso.exec(database)
                 pass
-            # Conteo de creditos
+            # Agregar cursos
             if value_select == 3:
                 print('Opcion 3')
                 pass
-            # Mapa de cursos
+            # Editar cursos
             if value_select == 4:
                 print('Opcion 4')
+                pass
+            # Eliminar cursos
+            if value_select == 5:
+                print('Opcion 5')
                 pass
             pass
         pass
