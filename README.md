@@ -9,3 +9,5 @@ Repositorio de la practica 1 del curso de lenguajes formales y de programación 
 - [Validaciones del programa](/doc/validaciones.md)
 - [Base de datos](/doc/database.md)
 - [Consultas a la base de datos](/doc/query.md)
+
+[![Run on Repl.it](https://repl.it/badge/github/xhuniktzi/lenguajes-formales-practica1)](https://repl.it/github/xhuniktzi/lenguajes-formales-practica1)
