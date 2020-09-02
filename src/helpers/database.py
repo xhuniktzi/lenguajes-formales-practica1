@@ -1,6 +1,6 @@
 # Manejador de alto nivel para la base de datos
 
-from helpers.core_db import core_create, core_read, core_update
+from helpers.core_db import core_create, core_read, core_update, core_delete
 from errors.CursoRefError import CursoRefError
 from models.Estado import Estado
 from models.Opcionalidad import Opcionalidad
@@ -47,6 +47,9 @@ def delete(database, id_curso):
             if element.codigo_requisitos[i] == id_curso:
                 raise CursoRefError
             pass
+        pass
+
+    core_delete(database, id_curso)
     pass
 
 
