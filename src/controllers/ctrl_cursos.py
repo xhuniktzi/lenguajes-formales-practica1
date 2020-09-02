@@ -1,7 +1,7 @@
 # Controlador gestion de cursos
 
 from views import ctrl_cursos
-from controllers import list_cursos, view_curso
+from controllers import list_cursos, view_curso, add_cursos
 
 
 def exec(database):
@@ -25,7 +25,7 @@ def exec(database):
                 pass
             # Agregar cursos
             if value_select == 3:
-                print('Opcion 3')
+                add_cursos.exec(database)
                 pass
             # Editar cursos
             if value_select == 4:
