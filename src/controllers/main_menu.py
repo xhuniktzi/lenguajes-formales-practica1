@@ -1,9 +1,7 @@
 # Controlador menu Principal
 
 from views import main_menu
-from controllers import load_files, ctrl_cursos, count_creditos
-
-from helpers.view_graph import render_graph
+from controllers import load_files, ctrl_cursos, count_creditos, graphviz
 
 
 def exec():
@@ -32,7 +30,7 @@ def exec():
                 pass
             # Mapa de cursos
             if value_select == 4:
-                render_graph(database)
+                graphviz.exec(database)
                 pass
             pass
         pass

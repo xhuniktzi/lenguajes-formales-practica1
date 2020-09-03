@@ -9,7 +9,7 @@ from models.Opcionalidad import Opcionalidad
 
 def render_graph(database):
     temp = NamedTemporaryFile('w+')
-    dot = Digraph('Pensum de estudios')
+    dot = Digraph()
     dot.format = 'svg'
     dot.graph_attr['rankdir'] = 'LR'
     dot.node_attr['shape'] = 'rectangle'
@@ -36,4 +36,5 @@ def render_graph(database):
         pass
 
     dot.render(temp.name, view=True)
+    temp.close()
     pass
