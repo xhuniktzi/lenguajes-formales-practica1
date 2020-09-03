@@ -1,7 +1,7 @@
 # Controlador conteo de creditos
 
 from views import count_creditos
-from controllers import cursos_aprobados
+from controllers import count_aprobados, count_cursando, count_pendientes, count_obligatorios, count_semestre
 
 
 def exec(database):
@@ -17,23 +17,23 @@ def exec(database):
         else:
             # Creditos cursos aprobados
             if value_select == 1:
-                cursos_aprobados.exec(database)
+                count_aprobados.exec(database)
                 pass
             # Creditos cursos cursando
             if value_select == 2:
-                print('Opcion 2')
+                count_cursando.exec(database)
                 pass
             # Creditos cursos pendientes
             if value_select == 3:
-                print('Opcion 3')
+                count_pendientes.exec(database)
                 pass
             # Creditos cursos obligatorios
             if value_select == 4:
-                print('Opcion 4')
+                count_obligatorios.exec(database)
                 pass
             # Creditos cursos semestre
             if value_select == 5:
-                print('Opcion 5')
+                count_semestre.exec(database)
                 pass
             pass
         pass
