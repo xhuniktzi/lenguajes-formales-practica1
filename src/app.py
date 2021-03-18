@@ -70,6 +70,10 @@ def read_file(filename: str):
 
 
 def run():
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9e0752adffbe5a4d3db4794ac90207fa5adf566e
     for row in file_rows:
         split_row = row.split('=', 1)
         print('Identificador: {}'.format(split_row.pop(0)))
