@@ -31,7 +31,8 @@ def clear_ops(ops_list: list):
     ops_return = []
     op_regex = regex.compile('(BUSCAR|ORDENAR)(\s\d)?')
     for op in ops_list:
-        if (type(op) is str) and (op != None) and (op != '\n') and (op != '') and (op != ' '):
+        if (type(op) is str) and (op != None) and (op != '\n') and (
+                op != '') and (op != ' '):
             ops_return.append(op_regex.findall(op)[0])
     return ops_return
 
@@ -63,10 +64,12 @@ def execute_ops(ops: list, data: list):
         execute_op(op, data)
 
 
-def run():
-    file_data = open(open_file(), 'r')
+def read_file(filename: str):
+    file_data = open(filename, 'r')
     file_rows = file_data.readlines()
 
+
+def run():
     for row in file_rows:
         split_row = row.split('=', 1)
         print('Identificador: {}'.format(split_row.pop(0)))
@@ -74,8 +77,9 @@ def run():
         split_op = regex.split('(BUSCAR\s\d$)|(ORDENAR,?)', split_row[0])
 
         num_regex = regex.compile('\d+,?')
-        clear_numbers = list(map(lambda string: int(
-            string.strip(',')), num_regex.findall(split_op.pop(0))))
+        clear_numbers = list(
+            map(lambda string: int(string.strip(',')),
+                num_regex.findall(split_op.pop(0))))
 
         print('Datos: {}'.format(clear_numbers))
         ops = clear_ops(split_op)
@@ -84,12 +88,33 @@ def run():
 
 
 def view_menu():
+    file_data = None
     print('1. Cargar archivo de entrada')
     print('2. Desplegar listas ordenadas')
-    print('1. Cargar archivo de entrada')
-    print('1. Cargar archivo de entrada')
-    print('1. Cargar archivo de entrada')
+    print('3. Desplegar listas ordenadas')
+    print('4. Desplegar todo')
+    print('5. Desplegar todas a archivo')
+    print('6. Salir')
+    opt = int(input('Ingrese una opción: '))
+    print('')
+
+    if opt == 1:
+        filename = open_file()
+    elif opt == 2:
+        print('Opt 2')
+    elif opt == 3:
+        print('Opt 3')
+    elif opt == 4:
+        print('Opt 4')
+    elif opt == 5:
+        print('Opt 5')
+    elif opt == 6:
+        flag = False
+        exit()
+    else:
+        print('¡Instrucción invalida!')
+        view_menu()
 
 
 if __name__ == '__main__':
-    pass
+    view_menu()
